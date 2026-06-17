@@ -1,4 +1,6 @@
 $(function(){
+    gsap.registerPlugin(ScrollTrigger);
+    
     // menu_list
     const menu_list = document.querySelectorAll(".qick_menu_area > .list > li .qick_menu, #footer .container .bot_area .inner_box .menu_area > .list > li .menu");
     menu_list.forEach(menu => {
@@ -9,6 +11,11 @@ $(function(){
         });
     });
 
+    // light mode
+    $(".light_mode").on("click", function(){
+        alert("준비중 입니다.");
+    });
+    
 
     function ovelay_open(){
         $("body").css("overflow", "hidden");
@@ -85,7 +92,7 @@ $(function(){
 
 	$(window).resize(function(){
         let vW = $(window).innerWidth();
-		if(vW <= 1080){
+		if(vW <= 1081){
 			$("#header").addClass("mo");
             $(".qick_menu_area").css("visibility", "hidden").removeClass("on");
             $(".project_cont .container .project_area .list li:first-child").removeClass("on");
@@ -116,8 +123,235 @@ $(function(){
     $(window).scroll();
 
 
+    // main visual
+    gsap.to(".intro_cont .container .bg_img", {
+        width: "100%",
+        height: "100%",
+        scrollTrigger: {
+            trigger: "#section1",
+            start: "top top",
+            pin: true,
+            scrub: 1,
+            onLeave: sec1ScrollOn,
+            onEnterBack: sec1ScrollOff,
+        },
+    });
 
-    
+    function sec1ScrollOn() {
+        $(".scroll_down").addClass("on");
+        $(".intro_cont .container .intro_dese").addClass("on");
+        $(".about_cont .container .title_area").addClass("fade");
+    }
+
+    function sec1ScrollOff() {
+        $(".scroll_down").removeClass("on");
+        $(".intro_cont .container .intro_dese").removeClass("on");
+        $(".about_cont .container .title_area").removeClass("fade");
+    }
+
+
+    // main_title_area
+    gsap.utils.toArray(".main_title_area").forEach(title => {
+        gsap.from(title, {
+            scrollTrigger: {
+                trigger: title,
+                start: "top 60%",
+                toggleClass: "on",
+                toggleActions: "play none none reverse",
+            }
+        });
+    });
+
+
+    // about
+    gsap.to("#section2", {
+        backgroundColor: "#000",
+        scrollTrigger: {
+            trigger: "#section2",
+            start: "top 20%",
+            toggleClass: "on",
+            toggleActions: "play none none reverse",
+        },
+    });
+
+    gsap.to(".about_cont .container .title_area", {
+        scrollTrigger: {
+            trigger: ".about_cont .container .title_area",
+            start: "top 15%",
+            endTrigger: ".about_cont",
+            toggleClass: "fix",
+            toggleActions: "play none none reverse",
+        }
+    });
+
+    gsap.utils.toArray(".about_cont .container .year_area .list li .box .top .img").forEach(years => {
+        gsap.from(years, {
+            yPercent: 15,
+            scrollTrigger: {
+                trigger: years,
+                start: "top 50%",
+                toggleClass: "on",
+                toggleActions: "play none none reverse",
+            }
+        });
+    });
+
+
+    // project
+    ScrollTrigger.matchMedia({
+        // PC 환경 (1080px 이상)에서만 트리거 활성화
+        "(min-width: 1080px)": function() {
+            gsap.utils.toArray(".project_cont .container .project_area .list li").forEach((project) => {
+                gsap.from(project, {
+                    y: 50,
+                    opacity: 0,
+                    scrollTrigger: {
+                        trigger: project,
+                        start: "top 100%",
+                        toggleActions: "play none none reset",
+                    }
+                });
+            });
+        },
+        // 모바일 환경일 경우
+        "(max-width: 1079px)": function() {
+            gsap.utils.toArray(".skill_cont .container .skill_area .list_area > .list > li").forEach((skill, i) => {
+                gsap.from(skill, {
+                    scrollTrigger: {
+                        trigger: skill,
+                        start: "top 70%",
+                        toggleClass: "on",
+                        toggleActions: "play none none reset",
+                    }
+                });
+            });
+        }
+    });
+
+
+    // publishing
+    $(document).ready(function() {            
+        function pubWidt(){
+            var windowWidth = $(window).width();
+            if (windowWidth >= 1081) {
+                var pubWidth = $('.publishing_cont .container').outerWidth();
+                var pubLi = $(".publishing_cont .publishing_area.hide1081 > .list > li");
+                var pubTitWidth = pubLi.find(".title_area").outerWidth();
+                var pubNum = pubLi.length;
+                var pubConWidth = pubWidth - pubTitWidth * pubNum;
+                $(".publishing_cont .publishing_area.hide1081 > .list > li .box .cont_area").css("width", pubConWidth);
+            } else {
+            }
+        }
+
+        pubWidt();
+
+        $(window).resize(function() {
+            pubWidt();
+        });
+    });
+
+
+        
+    //-----스토리 슬라이드-----
+    if (window.innerWidth <= 1080) {
+        var storySwiper  = new Swiper ('.project_area', {
+            slidesPerView: 1.5,
+            spaceBetween: window.innerWidth * 0.05,
+            speed: 1000,
+            loop: true,
+            on: {
+                resize: function () {
+                    this.params.spaceBetween = window.innerWidth * 0.05;
+                    this.update();
+                }
+            }
+        });            
+
+        // publishing slide
+        var pubSilde  = new Swiper ('.publishing_area.show1081', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            loop: true,
+            initialSlide: 3,      
+        });
+    } else {
+        const boxs = document.querySelectorAll('.skill_cont .container .skill_area .list_area > .list > li');
+        boxs.forEach(box => {
+            box.addEventListener("mousemove",(e)=>{
+                const brothers = Array.from(box.parentElement.children);
+                brothers.forEach(brother => {
+                    brother.classList.remove('hovered');
+                });
+                box.classList.add("hovered");
+                let x = (e.clientX - 1000) ;
+                let y = (e.clientY - 1000);
+                gsap.to(".skill_cont .container .skill_area .list_area > .list > li .box .img",{
+                    y: x,
+                    x: y,
+                    duration:1,
+                });
+            });
+        });
+    }
+
+    function ftOn(){
+        $("#footer").delay(250).queue(function(next) {
+            $(this).addClass('on');
+            next();
+        });
+    };
+
+    function ftOff(){
+        $("#footer").removeClass("on");
+    };
+
+    let cards = gsap.utils.toArray(".publishing_cont .publishing_area.hide1081 > .list > li");
+    let container = gsap.utils.toArray('.publishing_cont .publishing_area.hide1081');
+    let spacer = $(".publishing_cont .publishing_area.hide1081 > .list > li .box .title_area").outerWidth();
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 1081px)", () => {
+        const Pctl = gsap.timeline({
+            scrollTrigger: {
+                trigger: container,
+                pin: true,
+                scrub: 1,
+                start: "top top",
+                end: "bottom top",
+                onLeave: ftOn,
+                onEnterBack: ftOff,
+                invalidateOnRefresh: true
+            }
+        });
+        Pctl.fromTo(
+            ".publishing_cont .publishing_area.hide1081 > .list > li:not(:first-child)",
+            {x: (index) => window.innerWidth - (spacer * 3 + 4) + (spacer * index),
+                stagger: 0.5,
+            y:0,
+            },
+            {
+                x: (index) => spacer * (index + 1),
+                stagger: 0.5,
+                y:0
+            }
+        );
+    });
+    mm.add("(max-width: 1080px)", () => {
+    });
+
+    gsap.from(".publishing_cont .publishing_area.show1081", {
+        opacity: 0,
+        duration: 1,
+        y: "15%",
+        scrollTrigger: {
+            trigger: ".publishing_cont .publishing_area.show1081",
+            start: "top 85%",
+            end: "bottom 90%",
+            onLeave: ftOn,
+            onEnterBack: ftOff,
+            toggleActions: "play none none reverse",
+        }
+    });
 
 
     // top_btn
@@ -125,63 +359,7 @@ $(function(){
         var h = $("#main").offset().top;
         $("html, body").animate({scrollTop: h}, 800, "linear");
         return false;
-    }); 
-
-
-
-
-
-
-
-
-
-
-    
-        //-----스토리 슬라이드-----
-        if (window.innerWidth <= 1080) {
-            var storySwiper  = new Swiper ('.project_area', {
-                slidesPerView: 1.4,
-                spaceBetween: window.innerWidth * 0.03,
-                speed: 1000,
-                loop: true,
-                breakpoints: {
-                    500: {
-                        slidesPerView: 1.4,
-                        spaceBetween: window.innerWidth * 0.05,
-                    }
-                }
-            });
-
-
-
-
-            // skill
-            $(".skill_cont .container .skill_area .list_area > .list > li").on('mouseover', function(e) {
-                $(this).addClass('hovered');
-            }).on('mousemove', function(e) {
-                let imgWidth = $(this).find(".box .img").outerWidth();
-                let imgHeight = $(this).find(".box .img").outerHeight();
-                TweenMax.to(e.currentTarget.querySelector('.img'), .5, {
-                    left: e.clientX - (imgWidth / 2),
-                    top: e.offsetY - (imgHeight / 2)
-                });
-                
-            }).on('mouseleave', function() {
-                $(this).removeClass('hovered');
-            });
-
-            // publishing slide
-            var pubSilde  = new Swiper ('.publishing_area.show1081', {
-                slidesPerView: 'auto',
-                centeredSlides: true,
-                loop: true,
-                initialSlide: 3,      
-            });
-        } else {
-
-        }
-
-
+    });     
 });
 
 
@@ -193,193 +371,3 @@ $(function(){
 
 
 
-
-// about
-// let a_desc = document.querySelectorAll(".a_desc");
-// let section1Top = document.querySelector("#section1").offsetTop;
-
-// function scroll1(){
-//     let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY
-
-//     a_desc.forEach(item => {
-//         if(scrollTop >= section1Top + item.offsetTop - window.innerHeight){
-//             item.classList.add("on");
-//         } else {
-//             item.classList.remove("on");
-//         }
-//     })
-
-//     requestAnimationFrame(scroll1);
-// }
-// scroll1();
-
-// skill marqueeText
-// const pTag1 = document.querySelector('.first-parallel');
-// const pTag2 = document.querySelector('.second-parallel');
-// const pTag3 = document.querySelector('.third-parallel');
-// const pTag4 = document.querySelector('.forth-parallel');
-// const pTag5 = document.querySelector('.five-parallel');
-
-// const textArr1 = "HTML/CSS HTML/CSS HTML/CSS HTML/CSS HTML/CSS HTML/CSS HTML/CSS".split(' ');
-// const textArr2 = "JQUERY/JAVASCRIPT JQUERY/JAVASCRIPT JQUERY/JAVASCRIPT JQUERY/JAVASCRIPT".split(' ');
-// const textArr3 = "PHP PHP PHP PHP PHP PHP PHP PHP PHP PHP PHP PHP PHP PHP PHP PHP".split(' ');
-// const textArr4 = "POTOSHOP POTOSHOP POTOSHOP POTOSHOP POTOSHOP POTOSHOP POTOSHOP".split(' ');
-// const textArr5 = "ILLUSTRATION ILLUSTRATION ILLUSTRATION ILLUSTRATION ILLUSTRATION".split(' ');
-// let count1 = 0;
-// let count2 = 0;
-// let count3 = 0;
-// let count4 = 0;
-// let count5 = 0;
-
-// initTexts(pTag1, textArr1)
-// initTexts(pTag2, textArr2)
-// initTexts(pTag3, textArr3)
-// initTexts(pTag4, textArr4)
-// initTexts(pTag5, textArr5)
-
-// function initTexts(element, textArray) {
-//     textArray.push(...textArray)
-//     for (let i = 0; i < textArray.length; i++) {
-//         element.innerText += `${textArray[i]}\u00A0\u00A0\u00A0\u00A0`
-//     }
-// }
-
-// function marqueeText(count, element, direction) {
-//     if (count > element.scrollWidth / 2) {
-//         element.style.transform = `translate3d(0, 0, 0)`
-//         count = 0
-//     }
-//     element.style.transform = `translate3d(${direction * count}px, 0, 0)`
-
-//     return count
-// }
-
-// function animate() {
-//     count1++
-//     count2++
-//     count3++
-//     count4++
-//     count5++
-
-//     count1 = marqueeText(count1, pTag1, -1)
-//     count2 = marqueeText(count2, pTag2, 1)
-//     count3 = marqueeText(count3, pTag3, -1)
-//     count4 = marqueeText(count4, pTag4, 1)
-//     count5 = marqueeText(count5, pTag5, -1)
-
-//     window.requestAnimationFrame(animate)
-// }
-
-// function scrollHandler() {
-//     count1 += 15
-//     count2 += 15
-//     count3 += 15
-//     count4 += 15
-//     count5 += 15
-// }
-
-// window.addEventListener('scroll', scrollHandler)
-// animate()
-
-
-// // portfloio 가로모드
-// let section3Top = document.querySelector('#section3').offsetTop;
-
-// function scroll(){
-//     let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY
-
-//     //3번째 섹션에 왔을 때 스크롤탑을 0으로 초기화해서 시작
-//     let offset = scrollTop - section3Top;
-
-//     if(scrollTop >= section3Top){
-//         gsap.to(".p_item1", {left: -offset, ease: "linear"})
-//     }
-
-//     requestAnimationFrame(scroll);
-// }
-// scroll();
-
-
-// // p_item1
-// let section31Top = document.querySelector('#section3').offsetTop;
-// const p_item1 = document.querySelectorAll(".p_item1 article");
-
-// addEventListener("scroll", e => {
-//     const scrollY = window.scrollY;
-//     p_item1.forEach(item => {
-//         if(scrollY >= section31Top + item.offsetLeft - 75){
-//             item.classList.add("on");
-//         } else {
-//             item.classList.remove("on");
-//         }
-//     })
-// });
-
-// // p_item2
-// let section32Top = document.querySelector('#section3').offsetTop;
-// let p_item2 = document.querySelectorAll(".p_item2 article");
-// let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY
-
-// function scroll32(){
-//     let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY
-
-//     p_item2.forEach(item => {
-//         if(scrollTop >= section32Top + item.offsetTop - window.innerHeight){
-//             item.classList.add("on");
-//         } 
-//     })
-
-//     requestAnimationFrame(scroll32);
-// }
-// scroll32();
-
-
-// // potoshop
-// let poto_item = document.querySelectorAll(".poto_item");
-// let section4Top = document.querySelector("#section4").offsetTop;
-
-// function scroll4(){
-//     let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY
-
-//     poto_item.forEach(item => {
-//         if(scrollTop >= section4Top + item.offsetTop - (window.innerHeight/1.5)){
-//             item.classList.add("on");
-//         } else {
-//             item.classList.remove("on");
-//         }
-//     })
-
-//     requestAnimationFrame(scroll4);
-// }
-// scroll4();
-
-// // fullImg
-// let fullImgBox = document.getElementById("fullImgBox");
-// let fullImg = document.getElementById("fullImg");
-
-// function openFullImg(pic) {
-//     fullImgBox.style.display = "flex";
-//     fullImg.src = pic;
-// }
-
-// function closeFullImg() {
-//     fullImgBox.style.display = "none";
-// }
-
-
-// // publishing
-// let pub_item = document.querySelectorAll(".pub_item");
-// let section5Top = document.querySelector("#section5").offsetTop;
-
-// function scroll5(){
-//     let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY
-
-//     pub_item.forEach(item => {
-//         if(scrollTop >= section5Top + item.offsetTop - (window.innerHeight/2)){
-//             item.classList.add("on");
-//         }
-//     })
-
-//     requestAnimationFrame(scroll5);
-// }
-// scroll5();
