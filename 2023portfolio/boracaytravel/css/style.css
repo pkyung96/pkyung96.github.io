@@ -1,0 +1,161 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+/* reset */
+* { padding: 0; margin: 0;}
+body { font-size: 16px; width: 100%; overflow: hidden; overflow-y: scroll; font-family: 'Noto Sans KR', sans-serif; max-width: 1920px; margin: 0 auto !important;}
+a { color:#121212; text-decoration: none;}
+li,ol,dl { list-style: none;}
+button { border: 0; cursor: pointer;}
+
+
+/* 공통 css */
+.wrap { width: 100%; height: 100%;}
+.inner_wrap { width: 1400px; margin: 0 auto;}
+.tit { font-size: 47px; margin-bottom: 130px; font-weight: bold; color: #111; text-align: center; font-family: 'SCoreDream';}
+.p_desc { width: 100%; text-align: center;} 
+.p_desc h3 { font-size: 20px; font-family: 'SCoreDream'; letter-spacing: -0.02em; color: #111;}  
+.p_desc p { font-size: 18px; letter-spacing: -0.02em; font-family: 'Noto Sans KR', sans-serif; color: #111;} 
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after { display: none;}
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after { display: none;}
+.box1.on{animation: s_down 1s ease-in-out forwards;}
+.box2.on{animation: s_up 1s ease-in-out forwards;}
+.box3.on{animation: s_left 1s ease-in-out forwards;}
+.box4.on{animation: s_right 1s ease-in-out forwards;}
+
+@keyframes s_down {
+    0% {transform: translatey(-150px);}
+    100% {transform: translatey(0);}
+}
+
+@keyframes s_up {
+    0% {transform: translatey(150px);}
+    100% {transform: translatey(0px);}
+}
+
+@keyframes s_left {
+    0% {transform: translatex(-150px);}
+    100% {transform: translatex(0);}
+}
+
+@keyframes s_right {
+    0% {transform: translatex(150px);}
+    100% {transform: translatex(0);}
+}
+
+
+/* header */
+#header { width: 100%; height: 90px; background: transparent; position: fixed; top: 0; left:50%; transform:translateX(-50%); max-width: 1920px; z-index: 999; transition: all 0.6s ease-in-out; border-bottom: 1px solid rgba(255,255,255,0.6);}
+.header_wrap { width: 1600px; margin: 0 auto; height:100%; display: flex; justify-content: space-between; align-items: center; position: relative}
+.logo { height: 100%;}
+.logo a { display: block; font-size: 40px; line-height: 90px; color: #fff; font-family: 'SCoreDream';}
+#nav { height: 100%; background:transparent; z-index:9;}
+.gnb { width: 100%; height: 100%; display: inline-flex; justify-content: right;}
+.gnb > li { width: 165px; height: 90px; position: relative}
+.gnb > li > a { text-align: center; display: block; font-size: 17px; color:#fff; font-weight: 500; line-height:90px; padding:0 25px;}
+.gnb > li .sub { padding: 30px 0px; display: none; width: 100%; height: 141px;}
+.gnb > li .sub:hover { background: #f3f3f3;}
+.gnb > li .sub li { height: auto; padding: 12px 0px;}
+.gnb > li .sub li a {text-align: center; font-weight: 400; display: block; color: #333; letter-spacing: -0.04em; font-size: 16px;}
+.gnb > li .sub:hover li:hover a { color: #2835ae;}
+.gnb_bg { position: absolute; display: none; top: 90px; width: 100%; height: 200px; background: #fff; border: 1px solid #eee;}
+#header.on { background: #fff;}
+#header.on2 { border-bottom: 1px solid rgba(0,0,0,0.6);}
+.logo.on a { color: #111;}
+.logo a.on2  { color: #111;}
+.gnb > li.on a { color: #111;}
+.gnb > li a.on2 { color: #111;}
+.gnb > li.on:hover::after { content: ""; display: block; width: 100%; height: 2px; background: #2835ae; position: absolute; left: 0; top: 90px;}
+
+
+/* menu */
+#menu { position: fixed; width: 95px; top: 50%; right: 0; z-index:99; transform:translateY(-50%); display: flex;flex-direction: column;align-items:center;justify-content:center;}
+#menu li.menuBtn a { display: block; width: 15px; height: 15px; border-radius: 50%; background: #fff; margin-bottom: 10px; border: 1px solid #aaa;}
+#menu li.menuBtn.active a { width: 25px; height: 25px; background: #a2f5f8; border: 0;}
+
+
+/* section0 */
+#section0 .swiper-container {height: 100%;}
+.main_v .swiper-wrapper .mv1 {width: 100%; height: 100%; position: relative; overflow: hidden; background: url(../images/mv1.jpg)no-repeat center center /cover; text-align: center;}
+.main_v .swiper-wrapper .mv2 {width: 100%; height: 100%; position: relative; overflow: hidden; background: url(../images/mv2.jpg)no-repeat center center /cover; text-align: center;}
+.main_v .inner_wrap { z-index:1; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.main_v .p_desc { animation: fade_down 1s linear; margin: 0 auto; width: 600px; height: 450px; border: 1px solid #fff; backdrop-filter: blur(5px); box-sizing: border-box; padding: 60px 0;}
+.main_v .p_desc h3 { font-size: 60px; color: #fff; line-height: 70px; margin-bottom: 40px;}
+.main_v .p_desc h3 span { display: block; color: #a2f5f8;}
+.main_v .p_desc p { font-size: 22px; background: #fff; line-height: 60px; margin-bottom: 60px;}
+.main_v .p_desc span.desc { font-size: 18px; color: #fff;}
+
+@keyframes fade_down {
+    0% { margin-top: -100px; opacity: 0;}
+    100% { margin-top: 0px; opacity: 1;}
+}
+
+
+/* section1 */
+#section1 {width: 100%; position: relative; overflow: hidden; background:  url(../images/section1_bg.jpg) no-repeat left center; background-size: 100%;}
+.travel_wrapper { width: 100%; margin-left: 10%; position: relative; margin-top: 100px;}
+.travel_wrapper .tit { position: absolute; top: -65px; left: 0; text-align: left; z-index: 111; color: #fff; margin-bottom: 0; font-size: 100px;}
+.travel_Swiper ul li { width: 1600px; display: flex; justify-content: flex-start; align-items: center;}
+.travel_Swiper ul li .img_box img { width: 751px;}
+.travel_Swiper ul li .num { position: absolute; top: 50%; left: 670px; transform: translateY(-50%); font-size: 100px; font-family: 'SCoreDream'; font-weight: 600; color: #fff; -webkit-text-stroke: 1px #000; width: 150px; height: 150px; border: 5px solid #ccc; border-radius: 50%; text-align: center; line-height: 150px;}
+.travel_Swiper ul li .p_desc { text-align: left; padding-left: 140px;}
+.travel_Swiper ul li .p_desc h3 { font-size: 40px; margin-bottom: 40px;}
+.travel_wrapper .icon_box { position: absolute; top: 50%; transform: translateY(-50%) rotate(90deg); width: 100px; height: 100px; right: 360px; z-index: 1;}
+
+
+/* section2 */
+#section2 {width: 100%; position: relative; overflow: hidden; background: url(../images/section2_bg.jpg) no-repeat center center; background-size: 100%;}
+#section2 .tit { color: #fff;}
+.sale_box { display: flex; justify-content: space-between; align-items: center;}
+.sale_box li { width: 48%; height: 350px; border: 1px solid #fff; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.sale_box li .img_box { width: 75%; border-bottom: 1px solid #eee; margin-bottom: 40px; text-align: center; padding-bottom: 20px; display: flex; justify-content: center; align-items: center;}
+.sale_box li .img_box img { width: auto; height: 100px; z-index: 1;}
+.sale_box li .img_box p { width: 65px; height: 65px; background: #a2f5f8; border-radius: 50%; line-height: 65px; text-align: center; font-size: 20px; margin-left: -8px; color: #000; font-weight: bold;}
+.sale_box li .p_desc h3 { font-size: 30px; margin-bottom: 20px; color: #fff;}
+.sale_box li .p_desc h3 span { color: #a2f5f8;} 
+.sale_box li .p_desc p { color: #fff;}
+.sale_box li a { position: absolute; right: 0; top: 50%; transform: translateY(-50%); background: #a2f5f8; color: #000; width: 65px; height: 65px; line-height: 65px; text-align: center; font-weight: bold;}
+
+
+/* section3 */
+#section3 {width: 100%; position: relative; overflow: hidden; background: url(../images/section3_bg.jpg) no-repeat center center; background-size: 100%;}
+#section3 .tit { margin-bottom: 60px;}
+#section3 .inner_wrap { width: 1600px; position: relative;}
+.lodging_Swiper { width: 1400px;}
+.lodging_box {  display: flex; justify-content: space-between; align-items: center;}
+.lodging_box li { background: #fff; border: 1px solid #eee;}
+.lodging_box li .img_box { width: 100%; height: 335px; overflow: hidden;}
+.lodging_box li .img_box img { width: 100%;}
+.lodging_box li .p_desc { width: 100%; height: 195px; display: flex; flex-direction: column; justify-content: center; align-items: center; letter-spacing: -0.02em; color: #111;} 
+.lodging_box li .p_desc h3 { font-size: 20px; margin-bottom: 30px; font-family: 'SCoreDream';} 
+.lodging_box li .p_desc p { font-size: 17px;}
+
+
+/* section4 */
+#section4 {width: 100%; position: relative; overflow: hidden; background: url(../images/section4_bg.jpg)no-repeat center center /cover;}
+#section4 .inner_wrap{ width: 1080px; margin:0; float: right;}
+.inquiry_wrap .tit { color: #a2f5f8; margin-bottom: 0;}
+.inquiry_wrap .desc { font-size: 18px; margin-bottom: 60px; color:#fff; text-align: center;}
+.inquiry_box { width: 900px; margin: 0 auto;}
+.inquiry_box ul { width: 100%; display: flex; justify-content: space-between;}
+.inquiry_box ul li { width: 30%; height: 360px; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #ffff;}
+.inquiry_box ul li.p_desc h3 { color: #a2f5f8; margin-bottom: 5px; order: 1;}
+.inquiry_box ul li.p_desc p { font-size: 16px; color: #fff; margin-bottom: 50px; order: 2;}
+.inquiry_box ul li.p_desc i { color: #a2f5f8; font-size: 60px; margin-bottom: 50px; order: 3;}
+.inquiry_box ul li.p_desc i:hover { color:#fff; transition: all 0.6s;}
+.inquiry_box ul li.p_desc a { color: #fff; width: 130px; height: 30px; line-height: 30px; border-radius: 30px; border: 1px solid #fff; font-size: 15px; order: 4;}
+.inquiry_box ul li.p_desc a:hover { background: #fff; color: #111; font-weight: 600; transition: all 0.6s;}
+.inquiry_box ul li.p_desc:nth-child(2) h3 { order: 2;}
+.inquiry_box ul li.p_desc:nth-child(2) p { order: 3;}
+.inquiry_box ul li.p_desc:nth-child(2) i { order: 1;}
+
+
+/* footer */
+#footer { width: 100%; background: #f8f8f8; padding: 70px 0 50px;}
+#footer .footer_wrap { width: 1600px; margin: 0 auto;}
+.footer_wrap .ft_company { display: flex; justify-content: flex-start; align-items: center; margin-bottom: 60px;}
+.ft_company .ft_logo { margin-right: 50px;}
+.ft_company .ft_logo { margin-right: 50px;}
+.ft_company .ft_logo a { font-size: 40px; color: #bbb;}
+.ft_company .ft_info { font-size: 17px; color: #333;}
+.copy { font-size: 17px; color: #6c6c6c; text-align: center;}
