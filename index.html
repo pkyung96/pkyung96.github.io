@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박경미포토폴리오</title>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://kit.fontawesome.com/7ecd2087b7.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <!-- jquery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <!-- gsap -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <!-- script -->
+    <script src="js/script.js"></script>
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header id="header">
+            <div class="container">
+                <h1 class="title">KYUNG MI PORTFOLIO</h1>
+                <div class="qick_menu_area">
+                    <ul class="list">
+                        <li>
+                            <a href="#main" class="qick_menu">
+                                <span class="text">Main</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#section2" class="qick_menu">
+                                <span class="text">About</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#section3" class="qick_menu">
+                                <span class="text">Skill</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#section4" class="qick_menu">
+                                <span class="text">Project</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#section5" class="qick_menu">
+                                <span class="text">Publishing</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#footer" class="qick_menu">
+                                <span class="text">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="menu_btn_area">
+                    <button class="light_mode">
+                        <i class="fa-solid fa-cloud-moon"></i>
+                    </button>
+                    <button type="button" id="menu_open_btn" class="btn">
+                        <div class="inner">
+                            <span class="text">MENU</span>
+                            <div class="line">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </button>
+                    <button type="button" id="menu_close_btn" class="btn">
+                        <div class="inner">
+                            <span class="text">CLOSE</span>
+                            <div class="line">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+        <!-- overlay_menu -->
+        <div id="overlay_menu">
+            <div class="container">
+                <nav class="menu_area">
+                    <ul class="list">
+                        <li><a href="#main"><span class="num">01</span> MAIN</a></li>
+                        <li><a href="#section2"><span class="num">02</span> ABOUT</a></li>
+                        <li><a href="#section3"><span class="num">03</span> SKILL</a></lsi>
+                        <li><a href="#section4"><span class="num">04</span> PORTFOLIO</a></li>
+                        <li><a href="#section5"><span class="num">05</span> PUBLISHING</a></li>
+                        <li><a href="#footer"><span class="num">06</span> CONTACT</a></li>
+                    </ul>
+                </nav>
+                <div class="contact_area">
+                    <div class="info_area">
+                        <ul class="list">
+                            <li class="email">p3o_chu@naver.com</li>
+                            <li>010-2107-1731</li>
+                        </ul>
+                    </div>
+                    <div class="view_area">
+                        <ul class="list">
+                            <li id="profile_li">
+                                <button type="button" id="profile_open" class="btn">
+                                    <i class="fa-solid fa-user"></i>
+                                </button>
+                                <div class="profile_card_area">
+                                    <div class="inner_box">
+                                        <div class="top_area">
+                                            <div class="bg_img">
+                                                <img src="/images/etc_bg.jpg" alt="">
+                                            </div>
+                                            <div class="profile_img">
+                                                <img src="images/kyung_mi.jpg" alt="박경미">
+                                            </div>
+                                        </div>
+                                        <div class="bot_area">
+                                            <div class="inner">
+                                                <div class="text_area">
+                                                    <div class="name">박경미</div>
+                                                    <div class="job">PUBLISHER</div>
+                                                </div>
+                                                <div id="profile_skill" class="skill_area">
+                                                    <div class="list_area">
+                                                        <ul class="list">
+                                                            <li>
+                                                                <span class="txt">HTML5</span>
+                                                            </li>
+                                                            <li>
+                                                                <span class="txt">CSS3</span>
+                                                            </li>
+                                                            <li>
+                                                                <span class="txt">jquery</span>
+                                                            </li>
+                                                            <li>
+                                                                <span class="txt">Javascript</span>
+                                                            </li>
+                                                            <li>
+                                                                <span class="txt">Photoshop</span>
+                                                            </li>
+                                                            <li>
+                                                                <span class="txt">Figma</span>
+                                                            </li>
+                                                            <li>
+                                                                <span class="txt">Gsap</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="more_btn_area">
+                                                        <button type="button" class="more_btn">
+                                                            <span class="txt">+4</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="score_area">
+                                                    <ul class="list">
+                                                        <li>
+                                                            <div class="box">
+                                                                <div class="score"><i class="fa-brands fa-html5"></i>100</div>
+                                                                <span class="txt">HTML</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="box">
+                                                                <div class="score"><i class="fa-brands fa-css3-alt"></i>100</div>
+                                                                <span class="txt">CSS</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="box">
+                                                                <div class="score"><i class="fa-brands fa-square-js"></i> 95</div>
+                                                                <span class="txt">Javascript</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="close_btn_area">
+                                                    <button type="button" id="profile_close" class="close_btn">
+                                                        <span class="txt">CLOSE</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="mailto:p3o_chu@naver.com" class="btn">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:010-2107-1731" class="btn">
+                                    <i class="fa-solid fa-phone"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn">
+                                    <i class="fa-brands fa-github" class="ft_s"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- overlay_menu end -->
+        <!-- main -->
+        <main id="main">
+            <!-- section1 -->
+            <section id="section1">
+                <div class="intro_cont">
+                    <div class="container">
+                        <div class="bg_img">
+                            <img src="images/bg01.jpg" alt="">
+                        </div>
+                        <div class="intro_dese">
+                            <p>THE</p>
+                            <p>PORTFOLIO</p>
+                            <p>SHOW</p>
+                        </div>
+                        <div class="scroll_down">
+                            <span class="txt">SCROLL</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section1 end -->
+            <!-- section2 -->
+            <section id="section2">
+                <!-- about -->
+                <div class="about_cont">
+                    <article class="container">
+                        <div class="title_area">
+                            <div class="title">About Me</div>
+                        </div>
+                        <div class="year_area">
+                            <ul class="list">
+                                <li>
+                                    <div class="box box2">
+                                        <div class="top">
+                                            <div class="img">
+                                                <img src="images/year_img02.jpg" alt="">
+                                            </div>
+                                            <div class="date">2023.02 ~ 2025.03</div>
+                                        </div>
+                                        <div class="tit">가피아</div>
+                                        <div class="txt">#웹퍼블리싱 #반응형 웹 및 하이브리드 앱 구현 <br>#CMS 대시보드 구현 #웹접근성 마크 획득  #유지보수</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box box1">
+                                        <div class="top">
+                                            <div class="img">
+                                                <img src="images/year_img01.jpg" alt="">
+                                            </div>
+                                            <div class="date">2025.03 ~ 2025.07</div>
+                                        </div>
+                                        <div class="tit">㈜미디어코어시스템즈</div>
+                                        <div class="txt">#웹퍼블리싱 #반응형 웹 및 CMS 대시보드 구현 <br>#뉴스레터폼 구현 #웹접근성 마크 획득 #유지보수</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box box4">
+                                        <div class="top">
+                                            <div class="img">
+                                                <img src="images/year_img04.jpg" alt="">
+                                            </div>
+                                            <div class="date">2021.10 ~ 2022.02</div>
+                                        </div>
+                                        <div class="tit">연세IT미래교육원</div>
+                                        <div class="txt">웹디자인과 웹퍼블리셔 전문가 양성</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box box3">
+                                        <div class="top">
+                                            <div class="img">
+                                                <img src="images/year_img03.jpg" alt="">
+                                            </div>
+                                            <div class="date">2022.05 ~ 2022.10</div>
+                                        </div>
+                                        <div class="tit">모든세븐</div>
+                                        <div class="txt">#웹퍼블리싱 #반응형 웹 구현 #블록체인 기반 앱 퍼블리싱 구현 <br>#그누보드를 이용한 쇼핑몰 웹 구현 #유지보수</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box box5">
+                                        <div class="top">
+                                            <div class="img">
+                                                <img src="images/year_img05.jpg" alt="">
+                                            </div>
+                                            <div class="date">2012.03 ~ 2015.02</div>
+                                        </div>
+                                        <div class="tit">서천여자정보고등학교</div>
+                                        <div class="txt">E-shop 디자인과</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <!-- section2 end -->
+            <!-- section3 -->
+            <section id="section3">
+                <!-- skill -->
+                <article class="skill_cont">
+                    <div class="container">
+                        <div class="main_title_area">
+                            <div class="title">SKILL</div>
+                        </div>
+                        <div class="skill_area">
+                            <div class="marquee_txt_area top">
+                                <div class="marquee_inner">
+                                    <span class="txt">HTML5<i class="fa-solid fa-splotch"></i>CSS<i class="fa-solid fa-splotch"></i>Tailwind CSS<i class="fa-solid fa-splotch"></i>Javascript<i class="fa-solid fa-splotch"></i>Vue.js<i class="fa-solid fa-splotch"></i>Photoshop<i class="fa-solid fa-splotch"></i>Illustration<i class="fa-solid fa-splotch"></i>Figma<i class="fa-solid fa-splotch"></i>VSCode<i class="fa-solid fa-splotch"></i>Intellij<i class="fa-solid fa-splotch"></i>GitHub<i class="fa-solid fa-splotch"></i>Eclipse<i class="fa-solid fa-splotch"></i>EditPlus<i class="fa-solid fa-splotch"></i></span>
+                                </div>
+                            </div>
+                            <div class="marquee_txt_area bot">
+                                <div class="marquee_inner">
+                                    <span class="txt">HTML5<i class="fa-solid fa-splotch"></i>CSS<i class="fa-solid fa-splotch"></i>Tailwind CSS<i class="fa-solid fa-splotch"></i>Javascript<i class="fa-solid fa-splotch"></i>Vue.js<i class="fa-solid fa-splotch"></i>Photoshop<i class="fa-solid fa-splotch"></i>Illustration<i class="fa-solid fa-splotch"></i>Figma<i class="fa-solid fa-splotch"></i>VSCode<i class="fa-solid fa-splotch"></i>Intellij<i class="fa-solid fa-splotch"></i>GitHub<i class="fa-solid fa-splotch"></i>Eclipse<i class="fa-solid fa-splotch"></i>EditPlus<i class="fa-solid fa-splotch"></i></span>
+                                </div>
+                            </div>
+                            <div class="list_area">
+                                <ul class="list">
+                                    <li>
+                                        <div class="box">
+                                            <span class="num">001</span>
+                                            <div class="tit">HTML5</div>
+                                            <p class="txt">시맨틱 태그를 활용한 <br>웹 표준 마크업 작성 및 하드코딩 구현 가능</p>
+                                            <div class="img">
+                                                <img src="images/html_code.jpg" alt="">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <span class="num">002</span>
+                                            <div class="tit">CSS</div>
+                                            <p class="txt">CSS Grid·Flex 기반의 <br>반응형 웹 구현 및 다양한 해상도 대응 경험</p>
+                                            <div class="img">
+                                                <img src="images/css_code.jpg" alt="">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <span class="num">003</span>
+                                            <div class="tit">Javascript</div>
+                                            <p class="txt">슬라이드 메뉴, 토글, 탭 메뉴 등 <br>기본적인 UI 인터랙션 구현 경험</p>
+                                            <div class="img">
+                                                <img src="images/js_code.jpg" alt="">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <span class="num">004</span>
+                                            <div class="tit">Vue.js</div>
+                                            <p class="txt">Vue.js 환경에서 컴포넌트 기반 <br>UI 퍼블리싱 및 화면 구현 경험 보유</p>
+                                            <div class="img">
+                                                <img src="images/vue_code.jpg" alt="">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div> 
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- section3 end -->
+            <!-- section4 -->
+            <section id="section4">
+                <article class="project_cont">
+                    <div class="container">
+                        <div class="main_title_area sty2">
+                            <div class="row">
+                                <div class="title">PROJECT</div>
+                                <div class="btn_area sty2">
+                                    <ul class="list">
+                                        <li>
+                                            <a href="mailto:p3o_chu@naver.com" class="btn">
+                                                <span class="text">Get in Touch</span>
+                                                <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project_area">
+                            <ul class="list swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <div class="box">
+                                        <div class="data_area">
+                                            <div class="date">2025.03</div>
+                                            <div class="txt">HTML / CSS / JS / Vue</div>
+                                        </div>
+                                        <div class="cont_area">
+                                            <div class="inner">
+                                                <div class="img_area">
+                                                    <div class="img_inner">
+                                                        <div class="img">
+                                                            <img src="images/thumbnail01.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text_area">
+                                                    <div class="text_inner">
+                                                        <div class="tit">IITP 정보통신기획평가원</div>
+                                                        <div class="txt">#반응형 #리뉴얼 #웹접근성</div>
+                                                        <a href="https://www.iitp.kr/web/index.do" target="_blank" title="새창 열림" class="view">
+                                                            <span class="text">View Project <i class="fa-solid fa-arrow-right"></i></span>
+                                                        </a>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>                                      
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="box">
+                                        <div class="data_area">
+                                            <div class="date">2025.01</div>
+                                            <div class="txt">HTML / CSS / JS</div>
+                                        </div>
+                                        <div class="cont_area">
+                                            <div class="inner">
+                                                <div class="img_area">
+                                                    <div class="img_inner">
+                                                        <div class="img">
+                                                            <img src="images/thumbnail02.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text_area">
+                                                    <div class="text_inner">
+                                                        <div class="tit">경기도사회적경제원</div>
+                                                        <div class="txt">#반응형 #메인 리뉴얼 #유지보수</div>
+                                                        <a href="https://gsic.or.kr/home/kor/main.do" target="_blank" title="새창 열림" class="view">
+                                                            <span class="text">View Project <i class="fa-solid fa-arrow-right"></i></span>
+                                                        </a>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>                                      
+                                    </div>
+                                </li>  
+                                <li class="swiper-slide">
+                                    <div class="box">
+                                        <div class="data_area">
+                                            <div class="date">2024.11</div>
+                                            <div class="txt">HTML / CSS / JS / Figma</div>
+                                        </div>
+                                        <div class="cont_area">
+                                            <div class="inner">
+                                                <div class="img_area">
+                                                    <div class="img_inner">
+                                                        <div class="img">
+                                                            <img src="images/thumbnail03.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text_area">
+                                                    <div class="text_inner">
+                                                        <div class="tit">서울시공익활동지원센터</div>
+                                                        <div class="txt">#반응형 #리뉴얼 #고도화</div>
+                                                        <a href="https://seoulpa.kr" target="_blank" title="새창 열림" class="view">
+                                                            <span class="text">View Project <i class="fa-solid fa-arrow-right"></i></span>
+                                                        </a>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>                                      
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="box">
+                                        <div class="data_area">
+                                            <div class="date">2024.09</div>
+                                            <div class="txt">HTML / CSS / JS</div>
+                                        </div>
+                                        <div class="cont_area">
+                                            <div class="inner">
+                                                <div class="img_area">
+                                                    <div class="img_inner">
+                                                        <div class="img">
+                                                            <img src="images/thumbnail04.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text_area">
+                                                    <div class="text_inner">
+                                                        <div class="tit">K-BOOK ENG</div>
+                                                        <div class="txt">#반응형 #리뉴얼 #플랫폼 개편</div>
+                                                        <a href="https://www.k-book.or.kr/home/eng/main.do" target="_blank" title="새창 열림" class="view">
+                                                            <span class="text">View Project <i class="fa-solid fa-arrow-right"></i></span>
+                                                        </a>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>                                      
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="box">
+                                        <div class="data_area">
+                                            <div class="date">2025.08</div>
+                                            <div class="txt">HTML / CSS / JS</div>
+                                        </div>
+                                        <div class="cont_area">
+                                            <div class="inner">
+                                                <div class="img_area">
+                                                    <div class="img_inner">
+                                                        <div class="img">
+                                                            <img src="images/thumbnail05.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text_area">
+                                                    <div class="text_inner">
+                                                        <div class="tit">K-BOOK KOREA</div>
+                                                        <div class="txt">#반응형 #리뉴얼 #플랫폼 개편</div>
+                                                        <a href="https://www.k-book.or.kr/home/kor/main.do" target="_blank" title="새창 열림" class="view">
+                                                            <span class="text">View Project <i class="fa-solid fa-arrow-right"></i></span>
+                                                        </a>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>                                      
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="box">
+                                        <div class="data_area">
+                                            <div class="date">2024.06</div>
+                                            <div class="txt">HTML / CSS / JS</div>
+                                        </div>
+                                        <div class="cont_area">
+                                            <div class="inner">
+                                                <div class="img_area">
+                                                    <div class="img_inner">
+                                                        <div class="img">
+                                                            <img src="images/thumbnail06.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text_area">
+                                                    <div class="text_inner">
+                                                        <div class="tit">한국여성인권진흥원</div>
+                                                        <div class="txt">#반응형 #리뉴얼 #웹접근성</div>
+                                                        <a href="https://www.stop.or.kr/home/kor/main.do" target="_blank" title="새창 열림" class="view">
+                                                            <span class="text">View Project <i class="fa-solid fa-arrow-right"></i></span>
+                                                        </a>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>                                      
+                                    </div>
+                                </li>      
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- section4 end -->
+            <!-- section5 -->
+            <section id="section5">
+                <article class="publishing_cont">
+                    <div class="container">
+                        <div class="main_title_area sty2 show1081">
+                            <div class="title">PROJECT</div>
+                        </div>
+                        <div class="publishing_area hide1081">
+                            <ul class="list">
+                                <li>
+                                    <div class="box">
+                                        <div class="title_area">
+                                            <span class="num">1</span>
+                                            <div class="title">pokeallday</div>
+                                        </div>
+                                        <div class="cont_area">
+                                            <div class="top_area">
+                                                <div class="img_area">
+                                                    <div class="img_inner">
+                                                        <div class="img">
+                                                            <img src="/images/p_img1.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="txt_area">
+                                                    <div class="tit">시멘틱 태그를 활용해 <br>웹 표준과 접근성을 준수한 <br>반응형 웹사이트</div>
+                                                    <div class="link_area">
+                                                        <a href="pokeallday/index.html" target="_blank" title="새창 열림" class="link">
+                                                            <span class="txt">Go To View</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="bot_area marquee_txt_area">
+                                                <div class="marquee_inner">
+                                                    <span class="txt">HTML / CSS / JS / Photoshop / Swiper / VSCode / UI DESIGN / UX DESIGN / HTML / CSS / JS / Photoshop / Swiper / VSCode / UI DESIGN / UX DESIGN / </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <div class="title_area">
+                                            <span class="num">2</span>
+                                            <div class="title">boratravel</div>
+                                        </div>
+                                        <div class="cont_area">
+                                            <div class="top_area">
+                                                <div class="img_area">
+                                                    <div class="img_inner">
+                                                        <div class="img">
+                                                            <img src="/images/p_img2.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="txt_area">
+                                                    <div class="tit">플러그인을 활용해 구현한 <br>풀페이지 PC 전용 웹사이트</div>
+                                                    <div class="link_area">
+                                                        <a href="/boracaytravel/index.html" target="_blank" title="새창 열림" class="link">
+                                                            <span class="txt">Go To View</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="bot_area marquee_txt_area">
+                                                <div class="marquee_inner">
+                                                    <span class="txt">HTML / CSS / JS / Photoshop / Swiper / full Page / VSCode / UI DESIGN / UX DESIGN / HTML / CSS / JS / Photoshop / Swiper / full Page / VSCode / UI DESIGN / UX DESIGN / </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <div class="title_area">
+                                            <span class="num">3</span>
+                                            <div class="title">portfolio</div>
+                                        </div>
+                                        <div class="cont_area">
+                                            <div class="top_area">
+                                                <div class="img_area">
+                                                    <div class="img_inner">
+                                                        <div class="img">
+                                                            <img src="/images/p_img3.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="txt_area">
+                                                    <div class="tit">시맨틱 태그와 JS를 활용한 <br>2023 반응형 포트폴리오</div>
+                                                    <div class="link_area">
+                                                        <a href="/2023portfolio/index.html" target="_blank" title="새창 열림" class="link">
+                                                            <span class="txt">Go To View</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="bot_area marquee_txt_area">
+                                                <div class="marquee_inner">
+                                                    <span class="txt">HTML / CSS / JS / Photoshop / Swiper / VSCode / UI DESIGN / UX DESIGN / HTML / CSS / JS / Photoshop / Swiper / VSCode / UI DESIGN / UX DESIGN / </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="publishing_area show1081">
+                            <ul class="list swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <div class="box">
+                                        <div class="title_area">
+                                            <span class="num">1</span>
+                                            <div class="title">pokeallday</div>
+                                        </div>
+                                        <div class="cont_area">
+                                            <div class="top_area">
+                                                <div class="img_area">
+                                                    <div class="img_inner">
+                                                        <div class="img">
+                                                            <img src="/images/p_img1.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="txt_area">
+                                                    <div class="tit">아러아러얀랴져ㅑ저라ㅓ댜롣쟈~~</div>
+                                                    <div class="link_area">
+                                                        <a href="#" class="link">
+                                                            <span class="txt">Go To View</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="bot_area marquee_txt_area">
+                                                <div class="marquee_inner">
+                                                    <span class="txt">UI DESIGN / UX DESIGN / UI DESIGN / UX DESIGN / UI DESIGN / UX DESIGN / UI DESIGN / UX DESIGN / UI DESIGN / UX DESIGN / UI DESIGN / UX DESIGN /</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="box">
+                                        <div class="title_area">
+                                            <span class="num">2</span>
+                                            <div class="title">boratravel</div>
+                                        </div>
+                                        <div class="cont_area">
+                                            <div class="top_area">
+                                                <div class="img_area">
+                                                    <div class="img_inner">
+                                                        <div class="img">
+                                                            <img src="/images/p_img1.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="txt_area">
+                                                    <div class="tit">아러아러얀랴져ㅑ저라ㅓ댜롣쟈~~</div>
+                                                    <div class="link_area">
+                                                        <a href="#" class="link">
+                                                            <span class="txt">Go To View</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="bot_area marquee_txt_area">
+                                                <div class="marquee_inner">
+                                                    <span class="txt">UI DESIGN / UX DESIGN / UI DESIGN / UX DESIGN / UI DESIGN / UX DESIGN / UI DESIGN / UX DESIGN / UI DESIGN / UX DESIGN / UI DESIGN / UX DESIGN /</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="box">
+                                        <div class="title_area">
+                                            <span class="num">3</span>
+                                            <div class="title">portfolio</div>
+                                        </div>
+                                        <div class="cont_area">
+                                            <div class="top_area">
+                                                <div class="img_area">
+                                                    <div class="img_inner">
+                                                        <div class="img">
+                                                            <img src="/images/p_img1.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="txt_area">
+                                                    <div class="tit">아러아러얀랴져ㅑ저라ㅓ댜롣쟈~~</div>
+                                                    <div class="link_area">
+                                                        <a href="#" class="link">
+                                                            <span class="txt">Go To View</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="bot_area marquee_txt_area">
+                                                <div class="marquee_inner">
+                                                    <span class="txt">UI DESIGN / UX DESIGN / UI DESIGN / UX DESIGN / UI DESIGN / UX DESIGN / UI DESIGN / UX DESIGN / UI DESIGN / UX DESIGN / UI DESIGN / UX DESIGN /</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- section5 end -->
+        </main>
+        <!-- main end -->
+        <!-- footer -->
+        <footer id="footer">
+            <div class="footer_area">
+                <div class="container">
+                <div class="top_area">
+                    <div class="inner_box">
+                        <div class="title_area">
+                            <div class="title">Let's talk</div>
+                            <div class="btn_area sty2">
+                                <ul class="list">
+                                    <li>
+                                        <a href="mailto:p3o_chu@naver.com" class="btn">
+                                            <span class="text">Get in Touch</span>
+                                            <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="top_btn_area" class="btn_area">
+                            <ul class="list">
+                                <li>
+                                    <button type="button" id="top_btn" class="btn">
+                                        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bot_area">
+                    <div class="inner_box">
+                        <div class="text_area">
+                            <div class="logo">PKYUNG</div>
+                            <p class="copy">© 2026 Park-KyungMi All Rigths Reserved</p>
+                        </div>
+                        <div class="menu_area">
+                            <ul class="list">
+                                <li>
+                                    <a href="#main" class="menu">
+                                        <span class="text">Main</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section2" class="menu">
+                                        <span class="text">About</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section3" class="menu">
+                                        <span class="text">Skill</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section4" class="menu">
+                                        <span class="text">Project</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#section5" class="menu">
+                                        <span class="text">Publishing</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#footer" class="menu">
+                                        <span class="text">Contact</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="info_area">
+                            <ul class="list">
+                                <li>
+                                    <div class="title">Contact Me</div>
+                                    <div class="contact_area">
+                                        <ul class="list">
+                                            <li>
+                                                <a href="mailto:p3o_chu@naver.com" class="link">p3o_chu@naver.com</a>
+                                            </li>
+                                            <li>
+                                                <a href="tel:010-2107-1731" class="link">010-2107-1731</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">address</div>
+                                    <div class="contact_area">
+                                        <ul class="list">
+                                            <li>
+                                                <div class="link">4-21, Irwol-ro 18beon-gil, <br>Paldal-gu, Suwon-si, Gyeonggi-do</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>                      
+            </div>
+        </footer>
+        <!-- footer end -->
+    </div>
+    <!-- wrap end -->
+
+
+
+
+      <script>
+        // main visual
+        gsap.registerPlugin(ScrollTrigger);
+     
+        gsap.to(".intro_cont .container .bg_img", {
+            width: "100%",
+            height: "100%",
+            scrollTrigger: {
+                trigger: "#section1",
+                start: "top top",
+                pin: true,
+                scrub: 2,
+                onLeave: sec1ScrollOn,
+                onEnterBack: sec1ScrollOff,
+            },
+        });
+
+        function sec1ScrollOn() {
+            $(".scroll_down").addClass("on");
+            $(".intro_cont .container .intro_dese").addClass("on");
+            $(".about_cont .container .title_area").addClass("fade");
+        }
+
+        function sec1ScrollOff() {
+            $(".scroll_down").removeClass("on");
+            $(".intro_cont .container .intro_dese").removeClass("on");
+            $(".about_cont .container .title_area").removeClass("fade");
+        }
+
+
+        // main_title_area
+        gsap.utils.toArray(".main_title_area").forEach(title => {
+            gsap.from(title, {
+                scrollTrigger: {
+                    trigger: title,
+                    start: "top 60%",
+                    toggleClass: "on",
+                    toggleActions: "play none none reverse",
+                }
+            });
+        });
+
+
+        // about
+        gsap.to("#section2", {
+            backgroundColor: "#000",
+            scrollTrigger: {
+                trigger: "#section2",
+                start: "top 10%",
+                toggleClass: "on",
+                toggleActions: "play none none reverse",
+            },
+        });
+
+        gsap.to(".about_cont .container .title_area", {
+            scrollTrigger: {
+                trigger: ".about_cont .container .title_area",
+                start: "top 15%",
+                endTrigger: ".about_cont",
+                toggleClass: "fix",
+                toggleActions: "play none none reverse",
+            }
+        });
+
+        gsap.utils.toArray(".about_cont .container .year_area .list li .box .top .img").forEach(years => {
+            gsap.from(years, {
+                yPercent: 15,
+                scrollTrigger: {
+                    trigger: years,
+                    start: "top 50%",
+                    toggleClass: "on",
+                    toggleActions: "play none none reverse",
+                }
+            });
+        });
+
+
+        // project
+        ScrollTrigger.matchMedia({
+            // PC 환경 (1080px 이상)에서만 트리거 활성화
+            "(min-width: 1080px)": function() {
+                gsap.utils.toArray(".project_cont .container .project_area .list li").forEach((project) => {
+                    gsap.from(project, {
+                        y: 50,
+                        opacity: 0,
+                        scrollTrigger: {
+                            trigger: project,
+                            start: "top 100%",
+                            toggleActions: "play none none reset",
+                        }
+                    });
+                });
+            },
+            // 모바일 환경일 경우
+            "(max-width: 1079px)": function() {
+                gsap.utils.toArray(".skill_cont .container .skill_area .list_area > .list > li").forEach((skill, i) => {
+                    gsap.from(skill, {
+                        scrollTrigger: {
+                            trigger: skill,
+                            start: "top 70%",
+                            toggleClass: "on",
+                            toggleActions: "play none none reset",
+                        }
+                    });
+                });
+            }
+        });
+
+
+        // marquee
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.marquee_txt_area').forEach(ticker => {
+                const inner = ticker.querySelector('.marquee_inner');
+                const content = inner.querySelector('.marquee_txt_area .txt');
+                inner.append(content.cloneNode(true));
+                
+                const animations = []
+                inner.querySelectorAll('.marquee_txt_area .txt').forEach(element => {
+                    const animation = gsap.to(element, { 
+                        x: "-100%", 
+                        repeat: -1, 
+                        duration: 20, 
+                        ease: 'linear' 
+                    });
+                    animations.push(animation);
+                });
+
+                ticker.addEventListener('mouseenter', () => {
+                    animations.forEach(anim => anim.pause());
+                });
+                
+                ticker.addEventListener('mouseleave', () => {
+                    animations.forEach(anim => anim.play());
+                });
+            });
+        });
+
+
+
+        // publishing
+        $(document).ready(function() {            
+            function pubWidt(){
+                var windowWidth = $(window).width();
+                if (windowWidth >= 1081) {
+                    var pubWidth = $('.publishing_cont .container').outerWidth();
+                    var pubLi = $(".publishing_cont .publishing_area.hide1081 > .list > li");
+                    var pubTitWidth = pubLi.find(".title_area").outerWidth();
+                    var pubNum = pubLi.length;
+                    var pubConWidth = pubWidth - pubTitWidth * pubNum;
+                    $(".publishing_cont .publishing_area.hide1081 > .list > li .box .cont_area").css("width", pubConWidth);
+                } else {
+                }
+            }
+
+            // 1. 페이지 로드 시 최초 실행
+            pubWidt();
+
+            // 2. 브라우저 크기 변경(Resize) 시 마다 실행
+            $(window).resize(function() {
+                pubWidt();
+            });
+        });
+
+        function ftOn(){
+            $("#footer").delay(250).queue(function(next) {
+                $(this).addClass('on');
+                next();
+            });
+        };
+
+        function ftOff(){
+            $("#footer").removeClass("on");
+        };
+
+        let cards = gsap.utils.toArray(".publishing_cont .publishing_area.hide1081 > .list > li");
+        let container = gsap.utils.toArray('.publishing_cont .publishing_area.hide1081');
+        let spacer = $(".publishing_cont .publishing_area.hide1081 > .list > li .box .title_area").outerWidth();
+        let mm = gsap.matchMedia();
+        mm.add("(min-width: 1081px)", () => {
+            const Pctl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: container,
+                    pin: true,
+                    scrub: 1,
+                    start: "top top",
+                    end: "bottom top",
+                    onLeave: ftOn,
+                    onEnterBack: ftOff,
+                    invalidateOnRefresh: true
+                }
+            });
+            Pctl.fromTo(
+                ".publishing_cont .publishing_area.hide1081 > .list > li:not(:first-child)",
+                {x: (index) => window.innerWidth - (spacer * 3 + 4) + (spacer * index),
+                    stagger: 0.5,
+                y:0,
+                },
+                {
+                    x: (index) => spacer * (index + 1),
+                    stagger: 0.5,
+                    y:0
+                }
+            );
+        });
+        mm.add("(max-width: 1080px)", () => {
+        });
+
+        gsap.from(".publishing_cont .publishing_area.show1081", {
+            opacity: 0,
+            duration: 1,
+            y: "15%",
+            scrollTrigger: {
+                trigger: ".publishing_cont .publishing_area.show1081",
+                start: "top 85%",
+                end: "bottom 90%",
+                onLeave: ftOn,
+                onEnterBack: ftOff,
+                toggleActions: "play none none reverse",
+            }
+        });
+    </script>
+</body>
+</html>
