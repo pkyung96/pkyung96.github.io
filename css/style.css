@@ -27,53 +27,6 @@ img, video { display: block; width: 100%; height: 100%; border: 0;}
 .clearfix::before, .clearfix::after { content: ""; display: block; clear: both;}
 
 
-/********* reset.css **********/
-/* html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ul, ol, li,
-fieldset, form, label, legend,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: unset;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	box-sizing:border-box;
-}
-
-/* HTML5 display-role reset for older browsers */
-/* article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-
-h1,h2,h3,h4,h5,h6 {font-size:1em; font-weight:normal;}
-ul,ol,li {list-style-type:none;}
-a {color: #333; text-decoration:none;}
-img {max-width:100%; max-height:100%; border:0 none; vertical-align:top;}
-address {font-style:normal;}
-table, caption, tbody, tfoot, thead, tr, th, td {border-collapse: collapse; padding: 0;}
-button {margin:0; padding:0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; border:0 none; background-color:transparent; font-family:unset; font-size:unset; cursor:pointer;}
-input {-webkit-appearance: none; -webkit-border-radius: 0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; padding:0; font-family: unset; font-size: 1em; font-weight: 350;}
-textarea {width:100%; -webkit-appearance: none; -webkit-border-radius: 0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
-select {cursor:pointer; -webkit-border-radius: 0; font-family: unset; font-size: 1em; font-weight: 350;}
-
-/* placeholder */
-/* ::-webkit-input-placeholder {color: #767676;}
-::-moz-placeholder {color: #767676;}
-:-ms-input-placeholder {color: #767676;}
-:-moz-placeholder {color: #767676;} */
-
-
 :root {
   --main-color: #000;
   --sub-color: #5865f2;
@@ -173,6 +126,7 @@ section .container { width: 80%;}
 .qick_menu_area > .list > li .qick_menu:hover,
 .qick_menu_area > .list > li .qick_menu.on { background-color: var(--lightgray-color);}
 
+/* light_mode */
 .light_mode { opacity: 1; position: relative; width: 32px; height: 32px; border: 1px solid var(--silver-color); background-color: var(--white-color); font-size: 15px; border-radius: 50%; transition: 0.4s;}
 .light_mode:hover { animation: light_ani01 1s linear infinite;}
 .light_mode:hover::before { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0;  width: 100%; height: 100%; background-color: var(--sub-color); border-radius: 50%; animation: light_ani02 1s linear infinite; z-index: -1; transition: 0.4s;}
@@ -278,15 +232,16 @@ section .container { width: 80%;}
 #overlay_menu .container .contact_area .view_area > .list > li#profile_li .profile_card_area .inner_box .bot_area .inner .close_btn_area .close_btn:hover { background-color: var(--sub-color);}
 #overlay_menu .container .contact_area .view_area > .list > li#profile_li .profile_card_area .inner_box .bot_area .inner .close_btn_area .close_btn .txt { display: inline-block; font-weight: 500; font-size: 18px; line-height: 55px; color: var(--white-color); transition: all 0.3s;}
 
+
 /* intro */
 #section1 { height: 100vh;}
 .intro_cont { height: 100%;}
 .intro_cont .container { display: flex; justify-content: center; align-items: flex-end; width: 100%; height: 100%;}
-.intro_cont .container .bg_img { width: 85%; height: 85%;}
+.intro_cont .container .bg_img { width: 85vw; height: 85vh;}
 .intro_cont .container .bg_img img { object-fit: cover; object-position: center;}
 .intro_cont .intro_dese { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 20px 0; transition: all 1s ease-out;}
 .intro_cont .intro_dese.on { position: fixed; top: 0; transform: translate(-50%, 50vh);}
-.intro_cont .intro_dese p { font-family: "Oswald", sans-serif; font-weight: 900; font-size: 13vw; line-height: 1; color: var(--white-color); letter-spacing: -0.05em; filter: drop-shadow(3px 3px 5px var(--sub-color));}
+.intro_cont .intro_dese p { font-family: "Oswald", sans-serif; font-weight: 900; font-size: 250px; line-height: 1; color: var(--white-color); letter-spacing: -0.05em; filter: drop-shadow(3px 3px 5px var(--sub-color));}
 
 
 /* about */
@@ -485,12 +440,44 @@ section .container { width: 80%;}
 
 /* max-width: 1280px */
 @media (max-width: 1280px) {
+  /* layout */
+  section:not(:first-child) { padding: 125px 0;}
 
+
+  /* 공통 */
+  .main_title_area { margin: 0 0 50px;}
+  .main_title_area .title { font-size: 50px;}
+
+  .btn_area > .list > li .btn { padding: 0 65px 0 0;}
+  .btn_area > .list > li .btn .text { padding: 0 25px; font-size: 20px; line-height: 55px;}
+  .btn_area > .list > li .btn .arrow { width: 55px; height: 55px;}
+  .btn_area > .list > li .btn .arrow i { font-size: 14px;}
+  .btn_area > .list > li .btn:hover .text { padding-right: 45px;}
+  .btn_area > .list > li .btn:hover .arrow { right: 55px;}
+  
+  
+  /* header */
+  /* qick_menu_area */
   .qick_menu_area { padding: 10px 16px;}
   .qick_menu_area.on { top: calc((85px - 55px) / 2);}
   .qick_menu_area > .list { gap: 0 30px;}
   .qick_menu_area > .list > li .qick_menu { padding: 0 16px;}
   .qick_menu_area > .list > li .qick_menu .text { font-size: 16px; line-height: 35px;}
+
+  /* scroll_down */
+  .scroll_down { right: 4px;}
+  .scroll_down::after { left: calc(50% + 50px);}
+  .scroll_down .txt { font-size: 18px;}
+
+  @keyframes scroll {
+      0% {
+          width: 0;
+      }
+
+      100% {
+          width: 84px;
+      }
+  }
 
 
   /* overlay_menu */
@@ -518,19 +505,8 @@ section .container { width: 80%;}
   #overlay_menu .container .contact_area .view_area > .list > li#profile_li .profile_card_area .inner_box .bot_area .inner .close_btn_area .close_btn .txt { font-size: 16px; line-height: 50px;}
 
 
-  section:not(:first-child) { padding: 125px 0;}
-
-  .main_title_area { margin: 0 0 50px;}
-  .main_title_area .title { font-size: 50px;}
-
-
-
-  .btn_area > .list > li .btn { padding: 0 65px 0 0;}
-  .btn_area > .list > li .btn .text { padding: 0 25px; font-size: 20px; line-height: 55px;}
-  .btn_area > .list > li .btn .arrow { width: 55px; height: 55px;}
-  .btn_area > .list > li .btn .arrow i { font-size: 14px;}
-  .btn_area > .list > li .btn:hover .text { padding-right: 45px;}
-  .btn_area > .list > li .btn:hover .arrow { right: 55px;}
+  /* intro */
+  .intro_cont .intro_dese p { font-size: 220px;}
 
 
   /* about */
@@ -621,36 +597,14 @@ section .container { width: 80%;}
 
 /* max-width: 1080px */
 @media (max-width: 1080px) {
+  /* layout */
+  section:not(:first-child) { padding: 104px 0;}
 
 
-
-    .light_mode { display: none;}
-  #header.mo { position: fixed; background-color: var(--white-color); box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);}
-
-
-
-
-
-
-    .project_cont .container .project_area .list { flex-wrap: nowrap; gap: unset;}
-
-
-  /* overlay_menu */
-  #overlay_menu { padding: 85px 0 8vh;}
-  #overlay_menu .container { border-top: 1px solid var(--lightgray-color); justify-content: flex-end; align-items: stretch; flex-direction: column; gap: 64px 0; width: 90%; min-width: auto;}
-  #overlay_menu .container .menu_area > .list > li a { font-size: 52px;}
-  #overlay_menu .container .contact_area { border: 1px solid var(--silver-color); padding: 24px 48px; background-color: var(--lightgray-color); border-radius: 15px;}
-  #overlay_menu .container .contact_area .info_area { display: none;}
-  #overlay_menu .container .contact_area .view_area { margin: 0;}
-  #overlay_menu .container .contact_area .view_area > .list { gap: unset;}
-  #overlay_menu .container .contact_area .view_area > .list > li#profile_li .profile_card_area { left: -50px; transform: inherit;}
-
-
+  /* 공통 */
   .hide1081 { display: none;}
   .show1081 { display: block;}
 
-
-  section:not(:first-child) { padding: 104px 0;}
   .main_title_area { margin: 0 0 40px;}
   .main_title_area .title { font-size: 46px;}
 
@@ -660,10 +614,35 @@ section .container { width: 80%;}
   .btn_area > .list > li .btn .arrow { width: 50px; height: 50px;}
   .btn_area > .list > li .btn:hover .arrow { right: 0; transform: translateY(-50%);}
   
+
+  /* header */
+  #header .container { height: 75px;}
+  #header.mo { position: fixed; background-color: var(--white-color); box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);}
   
+  /* light_mode */
+  .light_mode { display: none;}
+
+  /* overlay_menu */
+  #overlay_menu { padding: 75px 0 8vh;}
+  #overlay_menu .container { border-top: 1px solid var(--lightgray-color); justify-content: flex-end; align-items: stretch; flex-direction: column; gap: 64px 0; width: 90%; min-width: auto;}
+  #overlay_menu .container .menu_area > .list > li a { font-size: 52px;}
+  #overlay_menu .container .contact_area { border: 1px solid var(--silver-color); padding: 24px 48px; background-color: var(--lightgray-color); border-radius: 15px;}
+  #overlay_menu .container .contact_area .info_area { display: none;}
+  #overlay_menu .container .contact_area .view_area { margin: 0;}
+  #overlay_menu .container .contact_area .view_area > .list { gap: unset;}
+  #overlay_menu .container .contact_area .view_area > .list > li#profile_li .profile_card_area { left: -50px; transform: inherit;}
+
+  /* scroll_down */
+  .scroll_down { right: 0;}
+
+
+  /* intro */
+  .intro_cont .intro_dese p { font-size: 20vw;}
+
+
   /* about */
   .about_cont .container { padding-top: calc(108px + 50px);}
-  .about_cont .container .title_area.fix { top: 158px; left: unset; right: 0; transform: translateX(-60%);}
+  .about_cont .container .title_area.fix { top: 158px; left: unset; right: 0; transform: translateX(-125px / 2);}
   .about_cont .container .year_area { width: calc(100% - 125px);}
   .about_cont .container .year_area .list { gap: 96px 0;}
   .about_cont .container .year_area .list li { width: 100%; margin-top: 0 !important;}
@@ -700,6 +679,7 @@ section .container { width: 80%;}
 
 
   /* project */
+  .project_cont .container .project_area .list { flex-wrap: nowrap; gap: unset;}
   .project_cont .container .project_area .list li .box .cont_area .inner .img_area { width: 100% !important;}
   .project_cont .container .project_area .list li.swiper-slide-active .box .cont_area .inner .img_area,
   .project_cont .container .project_area .list li.on .box .cont_area .inner .img_area { height: 100%;}
@@ -708,7 +688,6 @@ section .container { width: 80%;}
   .project_cont .container .project_area .list li .box .cont_area .inner .text_area { margin: 16px 0 0;}
   .project_cont .container .project_area .list li .box .cont_area .inner .text_area .text_inner { gap: 12px 0;}
   .project_cont .container .project_area .list li:last-child .box .cont_area .inner .text_area .text_inner .txt { color: var(--darkgray-color);}
-
 
 
   /* publishing */
@@ -757,17 +736,13 @@ section .container { width: 80%;}
 
 /* max-width: 768px */
 @media (max-width: 768px) {
-
-  /* header */
-  #header .container { height: 75px;}
-
-
-
+  /* layout */
   section:not(:first-child) { padding: 64px 0;}
 
+
+  /* 공통 */
   .main_title_area { margin: 0 0 32px;}
   .main_title_area .title { font-size: 36px;}
-
 
   .btn_area > .list > li .btn { padding: 0 50px 0 0;}
   .btn_area > .list > li .btn .text { padding: 0 20px; font-size: 16px; line-height: 45px;}
@@ -776,8 +751,11 @@ section .container { width: 80%;}
   .btn_area > .list > li .btn .arrow i { font-size: 12px;}
 
 
+  /* header */
+  #header .container { height: 70px;}
+
   /* overlay_menu */
-  #overlay_menu { padding: 75px 0 8vh;}
+  #overlay_menu { padding: 70px 0 8vh;}
   #overlay_menu .container { gap: 48px 0;}
   #overlay_menu .container .menu_area > .list > li { margin-left: 40px;}
   #overlay_menu .container .menu_area > .list > li a .num { font-size: 16px;}
@@ -785,10 +763,24 @@ section .container { width: 80%;}
   #overlay_menu .container .contact_area { padding: 20px 40px;}
   #overlay_menu .container .contact_area .view_area > .list > li#profile_li .profile_card_area { left: -41px;}
 
+  /* scroll_down */
+  .scroll_down { right: -15px;}
+  .scroll_down::after { left: calc(50% + 42px);}
+  .scroll_down .txt { font-size: 16px;}
+
+  @keyframes scroll {
+      0% {
+          width: 0;
+      }
+
+      100% {
+          width: 70px;
+      }
+  }
 
   /* about */
   .about_cont .container { padding-top: calc(90px + 40px);}
-  .about_cont .container .title_area.fix { top: 130px; transform: translateX(calc(-50%));}
+  .about_cont .container .title_area.fix { top: 130px; transform: translateX(calc(-104px / 2));}
   .about_cont .container .title_area .title { font-size: 90px;}
   .about_cont .container .title_area.fix .title { font-size: 104px;}
   .about_cont .container .year_area { width: calc(100% - 104px);}
@@ -806,7 +798,7 @@ section .container { width: 80%;}
 
 
   /* project */
-  .project_cont .container .project_area .list li.swiper-slide-active .box .cont_area .inner .img_area .img_inner { padding: 0 0 calc(100% + 45px);}
+  .project_cont .container .project_area .list li.swiper-slide-active .box .cont_area .inner .img_area .img_inner { padding: 0 0 calc(100% + 75px);}
   .project_cont .container .project_area .list li .box .cont_area .inner .text_area .text_inner .tit { font-size: 18px;}
   .project_cont .container .project_area .list li.swiper-slide-active .box .cont_area .inner .text_area .text_inner .tit,
   .project_cont .container .project_area .list li.on .box .cont_area .inner .text_area .text_inner .tit { font-size: 20px;}
@@ -842,16 +834,33 @@ section .container { width: 80%;}
 
 /* max-width: 480px */
 @media (max-width: 480px) {
-
   /* header */
-  #header .container { height: 70px;}
+  #header .container { height: 65px;}
   #header .container .title { font-size: 14px;}
 
+   /* scroll_down */
+  .scroll_down { right: -10px;}
+  .scroll_down::after { left: calc(50% + 35px);}
+  .scroll_down .txt { font-size: 14px;}
+
+  @keyframes scroll {
+      0% {
+          width: 0;
+      }
+
+      100% {
+          width: 58px;
+      }
+  }
+
+
+  /* layout */
   section:not(:first-child) { padding: 48px 0;}
 
+
+  /* 공통 */
   .main_title_area { margin: 0 0 24px;}
-  .main_title_area .title { font-size: 28px;}
-  
+  .main_title_area .title { font-size: 28px;}  
 
   .btn_area > .list > li .btn { padding: 0 45px 0 0;}
   .btn_area > .list > li .btn .text { padding: 0 15px; font-size: 14px; line-height: 40px;}
@@ -861,7 +870,7 @@ section .container { width: 80%;}
 
   
   /* overlay_menu */
-  #overlay_menu { padding: 70px 0 8vh;}
+  #overlay_menu { padding: 65px 0 8vh;}
   #overlay_menu .container { gap: 40px 0;}
   #overlay_menu .container .menu_area > .list > li { margin-left: 32px; margin-bottom: 25px;}
   #overlay_menu .container .menu_area > .list > li a { font-size: 36px;}
@@ -888,7 +897,7 @@ section .container { width: 80%;}
   
   /* about */
   .about_cont .container { padding-top: calc(60px + 32px);}
-  .about_cont .container .title_area.fix { top: 92px; transform: translateX(calc(-40%));}
+  .about_cont .container .title_area.fix { top: 92px; transform: translateX(calc(-69px / 2));}
   .about_cont .container .title_area .title { font-size: 60px;}
   .about_cont .container .title_area.fix .title { font-size: 69px;}
   .about_cont .container .year_area { width: calc(100% - 69px);}
@@ -938,6 +947,7 @@ section .container { width: 80%;}
   .project_cont .container .project_area .list li .box .data_area { margin: 0 0 16px;}
   .project_cont .container .project_area .list li .box .data_area .date { font-size: 14px;}
   .project_cont .container .project_area .list li .box .data_area .txt { font-size: 13px;}
+  .project_cont .container .project_area .list li.swiper-slide-active .box .cont_area .inner .img_area .img_inner { padding: 0 0 calc(100% + 85px);}
   .project_cont .container .project_area .list li.swiper-slide-active .box .cont_area .inner .text_area,
   .project_cont .container .project_area .list li.on .box .cont_area .inner .text_area,
   .project_cont .container .project_area .list li .box .cont_area { padding: 16px 16px 24px; border-radius: 15px;}
@@ -970,5 +980,4 @@ section .container { width: 80%;}
   #footer .footer_area .container .bot_area .inner_box .info_area { margin: 0 0 32px;}
   #footer .footer_area .container .bot_area .inner_box .info_area > .list > li .title { font-size: 14px;}
   #footer .footer_area .container .bot_area .inner_box .info_area > .list > li .contact_area > .list > li .link { font-size: 12px;}
-
 }
