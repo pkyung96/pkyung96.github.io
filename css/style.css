@@ -831,7 +831,7 @@ section .container { width: 80%;}
 
   /* about */
   .about_cont .container { padding-top: calc(90px + 40px);}
-  .about_cont .container .title_area.fix { top: 130px; transform: translateX(calc(-104px / 2 + 5px));}
+  .about_cont .container .title_area.fix { top: 130px; transform: translateX(calc(-104px / 2 + 5px)) !important;}
   .about_cont .container .title_area .title { font-size: 90px;}
   .about_cont .container .title_area.fix .title { font-size: 104px;}
   .about_cont .container .year_area { width: calc(100% - 104px);}
@@ -948,7 +948,7 @@ section .container { width: 80%;}
   
   /* about */
   .about_cont .container { padding-top: calc(60px + 32px);}
-  .about_cont .container .title_area.fix { top: 92px; transform: translateX(calc(-69px / 2 + 5px));}
+  .about_cont .container .title_area.fix { top: 92px; transform: translateX(calc(-69px / 2 + 5px)) !important;}
   .about_cont .container .title_area .title { font-size: 60px;}
   .about_cont .container .title_area.fix .title { font-size: 69px;}
   .about_cont .container .year_area { width: calc(100% - 69px);}
