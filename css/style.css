@@ -951,7 +951,7 @@ section .container { width: 80%;}
   
   /* about */
   .about_cont .container { padding-top: calc(60px + 32px);}
-  .about_cont .container .title_area.fix { width: 69px; top: 92px; transform: translateX(calc(-50%)) !important;}
+  .about_cont .container .title_area.fix { width: 69px; top: 92px; transform: translateX(calc(-30px)) !important;}
   .about_cont .container .title_area .title { font-size: 60px;}
   .about_cont .container .title_area.fix .title { font-size: 69px;}
   .about_cont .container .year_area { width: calc(100% - 69px);}
