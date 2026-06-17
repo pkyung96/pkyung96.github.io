@@ -292,14 +292,15 @@ $(function(){
                     duration:1,
                 });
             });
+
+            box.addEventListener("mouseleave",(e)=>{
+                box.classList.remove("hovered");
+            });
         });
     }
 
     function ftOn(){
-        $("#footer").delay(250).queue(function(next) {
-            $(this).addClass('on');
-            next();
-        });
+        $("#footer").addClass('on');
     };
 
     function ftOff(){
