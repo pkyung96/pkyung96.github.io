@@ -284,7 +284,7 @@ $(function(){
 
         
     //-----스토리 슬라이드-----
-    if (window.innerWidth <= 1080) {
+    if (window.innerWidth <= 1081) {
         var storySwiper  = new Swiper ('.project_area', {
             slidesPerView: 1.5,
             spaceBetween: window.innerWidth * 0.05,
