@@ -715,7 +715,7 @@ section .container { width: 80%;}
   .skill_cont .container .skill_area .list_area > .list > li.on .box .num,
   .skill_cont .container .skill_area .list_area > .list > li.on .box .tit,
   .skill_cont .container .skill_area .list_area > .list > li.on .box .txt { visibility: visible;}
-  .skill_cont .container .skill_area .list_area > .list > li .box .img { order: 1; position: unset; top: unset; left: unset; transform: unset; overflow: hidden; width: 100%; height: 100%; opacity: 1; visibility: visible; border-radius: 0;}
+  .skill_cont .container .skill_area .list_area > .list > li .box .img { order: 1; position: unset; top: unset; left: unset; transform: unset !important; overflow: hidden; width: 100%; height: 100%; opacity: 1; visibility: visible; border-radius: 0;}
   .skill_cont .container .skill_area .list_area > .list > li .box .img img { height: 100%; scale: unset; filter: grayscale(0.5);}
   .skill_cont .container .skill_area .list_area > .list > li.on .box .img img { scale: 1.15; filter: grayscale(0); transition: all 0.5s ease-out;}
   .skill_cont .container .skill_area .list_area > .list > li .box .num { order: 2; transform: translateX(-100%);}
