@@ -22,6 +22,7 @@ button { border: 0; cursor: pointer;}
 .box2.on{animation: s_up 1s ease-in-out forwards;}
 .box3.on{animation: s_left 1s ease-in-out forwards;}
 .box4.on{animation: s_right 1s ease-in-out forwards;}
+.swiper-button-next svg, .swiper-button-prev svg { display: none;}
 
 @keyframes s_down {
     0% {transform: translatey(-150px);}
